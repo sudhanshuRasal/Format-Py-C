@@ -25,6 +25,6 @@ A C library to format the console IO, with Python extensions to it.
  _For Python_
  > Run ``` python setup.py build```
 
- >     ``` python setup.py install```
+ > and ``` python setup.py install``` .
 
  > Import into your Python script: ```import format```
