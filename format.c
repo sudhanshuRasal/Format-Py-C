@@ -1,7 +1,7 @@
 #include "format.h"
 
 function setf(ESC_CODE ec) {
-  printf("%s",ec);
+  printf("\x1b[%dm",ec);
   return;
 }
 

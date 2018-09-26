@@ -1,71 +1,28 @@
-#ifndef __FORMAT_H
-#define __FORMAT_H
-#endif
-
 #ifndef _STDIO_H
 int printf(const char *, ...);
 #endif
 
-#define ANSI_DEFAULT \
-        "\x1b[0m"
+#ifndef __FORMAT_H
+#define __FORMAT_H
+#endif
 
-#define FG_BLACK   "\x1b[30m"
-#define FG_RED     "\x1b[31m"
-#define FG_GREEN   "\x1b[32m"
-#define FG_YELLOW  "\x1b[33m"
-#define FG_BLUE    "\x1b[34m"
-#define FG_MAGENTA "\x1b[35m"
-#define FG_CYAN    "\x1b[36m"
-#define FG_WHITE   "\x1b[37m"
+enum FG = {ANSI_DEFAULT=0, FG_BLACK = 30, FG_RED, FG_GREEN, FG_YELLOW, FG_BLUE, FG_MAGENTA, FG_CYAN, FG_WHITE};
 
 // BRIGHT COLORS
-#define FG_BRIGHT_BLACK   "\x1b[90m"
-#define FG_BRIGHT_RED     "\x1b[91m"
-#define FG_BRIGHT_GREEN   "\x1b[92m"
-#define FG_BRIGHT_YELLOW  "\x1b[93m"
-#define FG_BRIGHT_BLUE    "\x1b[94m"
-#define FG_BRIGHT_MAGENTA "\x1b[95m"
-#define FG_BRIGHT_CYAN    "\x1b[96m"
-#define FG_BRIGHT_WHITE   "\x1b[97m"
+enum FG_BRIGHT = {FG_BRIGHT_BLACK=90, FG_BRIGHT_RED, FG_BRIGHT_GREEN, FG_BRIGHT_YELLOW, FG_BRIGHT_BLUE, FG_BRIGHT_MAGENTA, FG_BRIGHT_CYAN, FG_BRIGHT_WHITE};
 
-#define BG_BLACK   "\x1b[40m"
-#define BG_RED     "\x1b[41m"
-#define BG_GREEN   "\x1b[42m"
-#define BG_YELLOW  "\x1b[43m"
-#define BG_BLUE    "\x1b[44m"
-#define BG_MAGENTA "\x1b[45m"
-#define BG_CYAN    "\x1b[46m"
-#define BG_WHITE   "\x1b[47m"
+// BG COLORS
+enum BG = {BG_BLACK = 40, BG_RED, BG_GREEN, BG_YELLOW, BG_BLUE, BG_MAGENTA, BG_CYAN, BG_WHITE};
 
 // BRIGHT
-#define BG_BRIGHT_BLACK   "\x1b[100m"
-#define BG_BRIGHT_RED     "\x1b[101m"
-#define BG_BRIGHT_GREEN   "\x1b[102m"
-#define BG_BRIGHT_YELLOW  "\x1b[103m"
-#define BG_BRIGHT_BLUE    "\x1b[104m"
-#define BG_BRIGHT_MAGENTA "\x1b[105m"
-#define BG_BRIGHT_CYAN    "\x1b[106m"
-#define BG_BRIGHT_WHITE   "\x1b[107m"
+enum BG_BRIGHT = {BG_BRIGHT_BLACK=100, BG_BRIGHT_RED, BG_BRIGHT_GREEN, BG_BRIGHT_YELLOW, BG_BRIGHT_BLUE, BG_BRIGHT_MAGENTA, BG_BRIGHT_CYAN, BG_BRIGHT_WHITE};
 
-#define BOLD          "\x1b[1m"
-#define FAINT         "\x1b[2m"
-#define ITALIC        "\x1b[3m"
-#define UNDERLINE     "\x1b[4m"
-#define SLOW_BLINK    "\x1b[5m"
-#define FAST_BLINK    "\x1b[6m"
-#define REVERSE_FB    "\x1b[7m"
-#define CONCEAL       "\x1b[8m"
-#define STRIKETHROUGH "\x1b[9m"
 
-#define BOLD_OFF          "\x1b[21m"
-#define FAINT_OFF         "\x1b[22m"
-#define ITALIC_OFF        "\x1b[23m"
-#define UNDERLINE_OFF     "\x1b[24m"
-#define SLOW_BLINK_OFF    "\x1b[25m"
-#define FAST_BLINK_OFF    "\x1b[26m"
-#define REVERSE_FB_OFF    "\x1b[27m"
-#define CONCEAL_OFF       "\x1b[28m"
-#define STRIKETHROUGH_OFF "\x1b[29m"
+// TEXT FORMATTING
+enum FORMAT = {BOLD=1, FAINT, ITALIC, UNDERLINE, SLOW_BLINK, FAST_BLINK, REVERSE_FB, CONCEAL, STRIKETHROUGH};
+
+// DISABLE TEXT FORMATTING
+enum FORMAT_OFF = {BOLD_OFF=21, FAINT_OFF, ITALIC_OFF, UNDERLINE_OFF, SLOW_BLINK_OFF, FAST_BLINK_OFF, REVERSE_FB_OFF, CONCEAL_OFF, STRIKETHROUGH};
 
 #define SWAP_BG_FG REVERSE_FB
 typedef void function;
